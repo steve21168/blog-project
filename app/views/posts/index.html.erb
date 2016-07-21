@@ -1,11 +1,9 @@
-<div class="col-sm-8">
-  <h1> All Posts </h1>
+<h1> All Posts </h1>
 
-  <% @posts.each do |post| %>
-    <div class="post">
-      <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
-      <p> <%= post.snippet %> </p>
-      <div class="author">By, <%= post.user.name %></div>
-    </div>
-  <% end %>
-</div>
+<% @posts.each do |post| %>
+  <div class="post">
+    <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
+    <p> <%= post.snippet %> </p>
+    <div class="author">By, <%= post.user.name %></div>
+  </div>
+<% end %>

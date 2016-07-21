@@ -1,7 +1,10 @@
-<div class="col-sm-8">
-  <h1><%= @post.title %></h1>
-  <p>
-    <%= @post.content %>
-  </p>
-  <h5><%= @post.user.name %></h5>
-</div>
+<h1><%= @post.title %></h1>
+<p>
+  <%= @post.content %>
+</p>
+<div class="author">By, <%= @post.user.name %></div>
+
+<% if current_user == @post.user  %>
+<!-- || current_user.admin? -->
+  <%= button_to "Delete post", user_post_path(current_user), method: "delete", data: {confirm: "Are you sure?"} %>
+<% end %>

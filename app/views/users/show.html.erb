@@ -1,11 +1,12 @@
-<div class="col-sm-8">
-  <h1> Posts </h1>
+  <% if flash[:success] %>
+    <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
+  <% end %>
+
+  <h1> <%= current_user.name %> </h1>
 
   <% @posts.each do |post| %>
     <div class="post">
       <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
       <p> <%= post.snippet %> </p>
-      <div class="author">By, <%= post.user.name %></div>
     </div>
   <% end %>
-</div>

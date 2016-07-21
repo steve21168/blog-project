@@ -1,16 +1,20 @@
 @import "bootstrap";
 
+body {
+  line-height: 1.65;
+}
+
+.container {
+  padding-left: 50px;
+}
 .sidebar {
   background-color: purple;
   height: 100%;
   margin: 0px;
-  //padding-right: 0px;
 }
 
 .sidebar ul {
   list-style-type: none;
-  //padding: 0;
-  //margin: 0;
 }
 
 .sidebar ul li {
@@ -26,4 +30,32 @@
 
 html, body, .row {
   height: 100%;
+}
+
+p {
+  font-family: "Droid Serif", serif;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+h1 {
+  margin: 20px 0;
+  font-weight: bold;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+.post a {
+  text-decoration: none;
+  color: #333337;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.post {
+  margin: 40px 0px;
+}
+
+.author {
+  color: #b6b6b6;
+  font-size: 18px;
 }
