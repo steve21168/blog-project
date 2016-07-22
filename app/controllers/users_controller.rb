@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
+    current_user.update(user_params)
   end
 
   private
