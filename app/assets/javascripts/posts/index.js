@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   onStart()
-  onPostClick()
+  onLinkClick()
 })
 
 
@@ -9,7 +9,7 @@ function onStart() {
   $('.my-posts').hide()
 }
 
-function onPostClick() {
+function onLinkClick() {
   $('a.my-posts-link').click(function() {
     showMyPosts()
     changeLinks()
