@@ -1,9 +1,25 @@
-<h1> All Posts </h1>
+<div class="page-nav">
+  <a href="#" class="all-posts-link">All Posts</a>
+  <% if user_signed_in? %>
+    <a href="#" class="my-posts-link">My Posts</a>
+  <% end %>
+</div>
 
 <% @posts.each do |post| %>
-  <div class="post">
-    <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
-    <p> <%= post.snippet %> </p>
-    <div class="author">By, <%= post.user.name %></div>
+  <div class="all-posts">
+    <div class="post">
+      <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
+      <p> <%= post.snippet %> </p>
+      <div class="author">By, <%= post.user.name %></div>
+    </div>
+  </div>
+<% end %>
+
+  <% @user_posts.each do |post| %>
+  <div class="my-posts">
+    <div class="post">
+      <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
+      <p> <%= post.snippet %> </p>
+    </div>
   </div>
 <% end %>

@@ -5,12 +5,17 @@ body {
 }
 
 .container {
-  padding-left: 50px;
+  padding: 50px 50px;
 }
 .sidebar {
   background-color: purple;
   height: 100%;
   margin: 0px;
+}
+
+.col-sm-8 {
+  height: 100%;
+  overflow: scroll;
 }
 
 .sidebar ul {
@@ -49,6 +54,29 @@ h1 {
   color: #333337;
   font-size: 32px;
   font-weight: bold;
+}
+
+.page-nav {
+  border-bottom: solid 1px #f5f5f5;
+}
+
+
+.page-nav a {
+  font-weight: bold;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  color: #b6b6b6;
+  padding-right: 15px;
+}
+
+.page-nav a:hover, .page-nav a:active, .page-nav a.active {
+    border-bottom: solid 2px #000;
+    color: #333337;
+}
+
+.hovered {
+  border-bottom: solid 2px #000;
+  color: #333337 !important;
 }
 
 .post {
