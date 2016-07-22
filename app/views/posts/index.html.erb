@@ -5,21 +5,8 @@
   <% end %>
 </div>
 
-<% @posts.each do |post| %>
-  <div class="all-posts">
-    <div class="post">
-      <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
-      <p> <%= post.snippet %> </p>
-      <div class="author">By, <%= post.user.name %></div>
-    </div>
-  </div>
-<% end %>
+<%= render partial: "post", collection: @posts, as: :post, locals: { author: true, klass: "all-posts" } %>
 
-  <% @user_posts.each do |post| %>
-  <div class="my-posts">
-    <div class="post">
-      <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
-      <p> <%= post.snippet %> </p>
-    </div>
-  </div>
+<% if @user_posts %>
+  <%= render partial: "post", collection: @user_posts, as: :post, locals: { author: false, klass: "my-posts" } %>
 <% end %>

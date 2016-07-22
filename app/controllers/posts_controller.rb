@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @user_posts = current_user.posts
+    @user_posts = current_user.posts if user_signed_in?
   end
 
   def show
