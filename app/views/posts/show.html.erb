@@ -1,12 +1,11 @@
 <h1><%= @post.title %></h1>
 <p>
-  <%= @post.content %>
+  <%= simple_format(@post.content) %>
 </p>
 <div class="author">By, <%= @post.user.name %></div>
 
-<% if current_user == @post.user  %>
-<!-- || current_user.admin? -->
-  <%= button_to "Delete post", user_post_path(current_user), method: "delete", data: {confirm: "Are you sure?"} %>
+<% if current_user == @post.user || admin? %>
+  <%= button_to "Delete post", user_post_path(current_user), method: "delete", class: "btn btn-primary", data: {confirm: "Are you sure?"} %>
 <% end %>
 
 <div class="comments">
@@ -20,5 +19,5 @@
 <%= form_for @comment, remote: true, id: "new_comment" do |f| %>
   <input type="hidden" name="comment[post_id]" value=<%=@post.id%> >
   <%= f.text_area :body %></br>
-  <%= f.submit %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

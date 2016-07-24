@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-u1 = User.create(name: "Dave Hollar", email: "dave@aol.com", password: "password")
-u2 = User.create(name: "Bob Barker", email: "bob@aol.com", password: "password")
-u3 = User.create(name: "Robbie Johnson", email: "robbie@yahoo.com", password: "password")
+u1 = User.create(name: "Dave Hollar", email: "dave@aol.com", password: "password", admin: true)
+u2 = User.create(name: "Bob Barker", email: "bob@aol.com", password: "password", admin: false)
+u3 = User.create(name: "Robbie Johnson", email: "robbie@yahoo.com", password: "password", admin: false)
 
 
 p1 = Post.new(title: "Dolorem ipsum", content: "So much to say hey hey hey", user: u1)
