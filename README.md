@@ -42,23 +42,23 @@ Overall the process was pretty smooth. These were really the only bugs and chall
 Work in Progress:
 
 Additional work and features needed:
-*Adding user avatar/image
-*Ability to edit post on same page via ajax
-*Ability to format text when making posts ex. bold things
-*Action Mailer and password resets for devise
-*Error handling, didn't focus heavily on this missing some error handling
-*More validations
-*Tighten up site responsiveness
+* Adding user avatar/image
+* Ability to edit post on same page via ajax
+* Ability to format text when making posts ex. bold things
+* Action Mailer and password resets for devise
+* Error handling, didn't focus heavily on this missing some error handling
+* More validations
+* Tighten up site responsiveness
 
 Infinite scrolling:
-*Code nearly there for barebones implementation of infinite scrolling
-*Due to heroku js issues and time constraints commented code out
-*Probably not the best/most efficient implementation
+* Code nearly there for barebones implementation of infinite scrolling
+* Due to heroku js issues and time constraints commented code out
+* Probably not the best/most efficient implementation
 
 Efficiencies:
-*Look for more n+1 problems
-*Efficient implementation of infinite scroll as I am just trying to load all posts to js.
+* Look for more n+1 problems
+* Efficient implementation of infinite scroll as I am just trying to load all posts to js.
 
 More admin abilities:
-*Give someone else admin from gui
-*Delete users?
+* Give someone else admin from gui
+* Delete users?
