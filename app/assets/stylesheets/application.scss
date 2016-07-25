@@ -115,3 +115,9 @@ h1 {
 textarea#post_content {
   height: 300px;
 }
+
+@media (max-width: 768px) {
+  .col-sm-4 {
+    height: 80%;
+  }
+}

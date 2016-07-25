@@ -4,23 +4,6 @@ $( document ).ready(function() {
   //getPosts()
 })
 
-function infiniteScroll(posts) {
-  var posts = posts.splice(0,3)
-  $('.col-sm-8').scroll(function() {
-    if($('.col-sm-8').scrollTop() + $('.col-sm-8').height() > $('div.container').height()) {
-      for (var i=0; i < 1; i++) {
-        $('.public-posts').append(postHTML(posts.pop()))
-      }
-    }
-  });
-}
-
-function getPosts() {
-  $.get("/get_posts", function(data) {
-    infiniteScroll(data)
-  })
-}
-
 function onStart() {
   $('a.all-posts-link').addClass("hovered")
   $('.my-posts').hide()
@@ -66,3 +49,20 @@ function postHTML(post){
     </div>
     `
 }
+
+// function infiniteScroll(posts) {
+//   var posts = posts.splice(0,3)
+//   $('.col-sm-8').scroll(function() {
+//     if($('.col-sm-8').scrollTop() + $('.col-sm-8').height() > $('div.container').height()) {
+//       for (var i=0; i < 1; i++) {
+//         $('.public-posts').append(postHTML(posts.pop()))
+//       }
+//     }
+//   });
+// }
+
+// function getPosts() {
+//   $.get("/get_posts", function(data) {
+//     infiniteScroll(data)
+//   })
+// }
