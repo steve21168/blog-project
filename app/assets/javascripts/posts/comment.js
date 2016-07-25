@@ -11,7 +11,7 @@ function onDeleteClick() {
 }
 
 function deleteComment() {
-  $('.comments').on("ajax:success", 'a#delete-comment', (e, data, status, xhr) => {
+  $('.comments').on("ajax:success", 'a#delete-comment', function(e, data, status, xhr) {
     $('.to-delete').remove()
   })
 }
