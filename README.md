@@ -13,7 +13,7 @@ Infinite scrolling was an interesting problem.  First I had to figure out a way 
 I was using a link with "remote: true" set to delete comments via
 AJAX.  When doing so I was hitting my controller deleting the post but when I returned to JS I couldn't think of a good way to find and select that comment via JQuery.  
 
--I ended up adding an event listener to button click and I added a class .to-delete so that after the successful delete from the database I can find the correct element to remove from the page
+-I ended up adding an event listener to button click and I added a class .to-delete so that after the successful delete from the database I can find the correct element to remove from the page.
 
 
 Got stuck on a bug trying to AJAX custom data via my forms "remote: true".
@@ -31,7 +31,7 @@ Wasn't completely sure what admins abilities should be or how they could safely 
 
 When deploying to Heroku I had some issues on the initial push.  I found out uglifier cannot compile JS assets that have es6 code in them.
 
-Solution: Removed es6
+Solution: Removed es6.
 
 
 Hit a silly bug where I tried to use a variable named "class" to set a views class.  Ruby was a bit confused by this. Renamed variable to "klass".
@@ -42,23 +42,23 @@ Overall the process was pretty smooth. These were really the only bugs and chall
 Work in Progress:
 
 Additional work and features needed:
--Adding user avatar/image
--Ability to edit post on same page via ajax
--Ability to format text when making posts ex. bold things
--Action Mailer and password resets for devise
--Error handling - didn't focus heavily on this missing some error handling
--More validations
--Tighten up site responsiveness
+*Adding user avatar/image
+*Ability to edit post on same page via ajax
+*Ability to format text when making posts ex. bold things
+*Action Mailer and password resets for devise
+*Error handling, didn't focus heavily on this missing some error handling
+*More validations
+*Tighten up site responsiveness
 
 Infinite scrolling:
--Code nearly there for barebones implementation of infinite scrolling
--Due to heroku js issues and time constraints commented code out
--Probably not the best/most efficient implementation
+*Code nearly there for barebones implementation of infinite scrolling
+*Due to heroku js issues and time constraints commented code out
+*Probably not the best/most efficient implementation
 
 Efficiencies:
-Look for more n+1 problems
-Efficient implementation of infinite scroll as I am just trying to load all posts to js.
+*Look for more n+1 problems
+*Efficient implementation of infinite scroll as I am just trying to load all posts to js.
 
 More admin abilities:
--Give someone else admin from gui
--Delete users?
+*Give someone else admin from gui
+*Delete users?
