@@ -19,13 +19,13 @@ function deleteComment() {
 function AddComment() {
   $('#new_comment').on("ajax:success", (e, data, status, xhr) => {
     var commentString =
-    `
+    '
     <div class="comment">
-    <p>${data.body}</p>
-    ${data.user.name}</br>
-    <a id="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/${data.id}">Delete</a>
+    <p>' + data.body '</p>
+    ' + data.user.name '</br>
+    <a id="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/"' + data.id + '>Delete</a>
     </div>
-    `
+    '
     $('.comments').append(commentString)
     $('textarea').val('')
   })
