@@ -29,3 +29,12 @@ function AddComment() {
       $('textarea').val('')
   })
 }
+
+//  var commentString =
+//   `
+//   <div class="comment">
+//   <p>${data.body}</p>
+//   ${data.user.name}</br>
+//   <a id="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/${data.id}">Delete</a>
+//   </div>
+//   `
