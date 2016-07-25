@@ -36,19 +36,19 @@ function changeLinks() {
   $('a.my-posts-link').toggleClass("hovered")
 }
 
-function postHTML(post){
-  debugger
-  var snippet = post.content.split("").splice(0,80).join("")
-  return `
-    <div class="all-posts">
-      <div class="post">
-        <h3><a href="/users/${post.user_id}/posts/${post.id}">${post.title}</a></h3>
-        <p>${snippet}</p>
-        <div class="author">By, ${post.author}</div>
-      </div>
-    </div>
-    `
-}
+// function postHTML(post){
+//   debugger
+//   var snippet = post.content.split("").splice(0,80).join("")
+//   return `
+//     <div class="all-posts">
+//       <div class="post">
+//         <h3><a href="/users/${post.user_id}/posts/${post.id}">${post.title}</a></h3>
+//         <p>${snippet}</p>
+//         <div class="author">By, ${post.author}</div>
+//       </div>
+//     </div>
+//     `
+// }
 
 // function infiniteScroll(posts) {
 //   var posts = posts.splice(0,3)
