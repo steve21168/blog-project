@@ -5,6 +5,9 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     if @comment.save
       render json: { body: @comment.body, user: current_user, id: @comment.id}
+    else
+      errors = @comment.errors.full_messages
+      render json: { errors: errors }
     end
   end
 

@@ -1,5 +1,5 @@
 $(document).ready(function() {
- AddComment()
+ comment()
  deleteComment()
  onDeleteClick();
 })
@@ -16,18 +16,36 @@ function deleteComment() {
   })
 }
 
-function AddComment() {
+function comment() {
   $('#new_comment').on("ajax:success", function(e, data, status, xhr) {
-    var commentString = '<div class="comment"><p>'
-        + data.body
-        + '</p>'
-        + data.user.name
-        + '</br><a id="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/'
-        + data.id
-        + '">Delete</a></div>'
-      $('.comments').append(commentString)
-      $('textarea').val('')
+    if (data.errors) {
+      commentErrors(data)
+    } else {
+      addComment(data)
+    }
   })
+}
+
+function addComment(data) {
+  var commentString = '<div class="comment"><p>'
+  + data.body
+  + '</p>'
+  + data.user.name
+  + '</br><a id="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/'
+  + data.id
+  + '">Delete</a></div>'
+  $('.comments').append(commentString)
+  $('textarea').val('')
+}
+
+function commentErrors(data) {
+    data.errors.forEach(function(error) {
+      var errorHtml = '<div class="alert alert-danger" role="alert">'+ error + '</div>'
+      if ($('div.alert-danger')) {
+        $('div.alert-danger').remove()
+      }
+      $('.comments').append(errorHtml)
+    })
 }
 
 //  var commentString =
