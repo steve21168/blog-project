@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:user)
     @user_posts = current_user.posts if user_signed_in?
   end
 
@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
@@ -26,6 +25,14 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    if @post.save
+      flash[:success] = "Post successfully updated"
+      redirect_to user_post_path(current_user, @post.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -35,6 +42,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+  end
+
+  def get_posts
+    posts = Post.all
+    render json: posts
   end
 
   private

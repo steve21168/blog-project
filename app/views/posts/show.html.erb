@@ -1,9 +1,11 @@
+<%= render partial: "success" %>
 <h1><%= @post.title %></h1>
 
 <div class="post">
   <%= simple_format(@post.content) %>
   <div class="author">By, <%= @post.user.name %></div>
   <%= post_delete(@post) %>
+  <%= post_edit(@post)%>
 </div>
 
 <div class="comments">
