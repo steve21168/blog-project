@@ -4,9 +4,4 @@
 
   <h1> <%= current_user.name %> </h1>
 
-  <% @posts.each do |post| %>
-    <div class="post">
-      <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
-      <p> <%= post.snippet %> </p>
-    </div>
-  <% end %>
+  <%= render partial: "posts/post", collection: @posts, as: :post, locals: { author: false, klass: "all-posts" } %>
