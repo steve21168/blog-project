@@ -116,6 +116,16 @@ textarea#post_content {
   height: 300px;
 }
 
+.last-update {
+  color: #b6b6b6;
+  font-size: 15px;
+  // padding-left: 3px;
+}
+
+.divider {
+  padding: 0px 5px;
+}
+
 @media (max-width: 768px) {
   .col-sm-4 {
     height: 80%;

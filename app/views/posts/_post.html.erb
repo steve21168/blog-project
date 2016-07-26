@@ -3,7 +3,12 @@
       <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
       <p> <%= post.snippet %> </p>
       <% if author %>
-        <div class="author">By, <%= post.user.name %></div>
+        <div class="author">
+          By, <%= post.user.name %> <span class="divider">•</span>
+          <span class="last-update"> <%= updated_at(post) %> </span>
+        </div>
+      <% else %>
+        <span class="last-update"> <%= updated_at(post) %> </span>
       <% end %>
     </div>
   </div>

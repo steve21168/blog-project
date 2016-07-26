@@ -10,4 +10,8 @@ module PostsHelper
        button_to "Edit post", edit_user_post_path(current_user, post), method: 'get', class: "btn btn-primary delete"
     end
   end
+
+  def updated_at(post)
+    "#{time_ago_in_words(post.updated_at).capitalize} ago"
+  end
 end
