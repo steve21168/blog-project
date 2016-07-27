@@ -8,6 +8,7 @@ I wasn't sure how to maintain the user's formatting when submitting posts from a
 
 
 Infinite scrolling was an interesting problem.  First I had to figure out a way to determine when the user's scroll is getting close to the bottom of the page.  Next even via ajax how do I make sure I am selecting the next right articles and in order.  Originally I wanted to just make an ajax request to ask for the next 5 or so articles each time.  I found it difficult to find where you are at in terms of what you asked for last and select the correct articles from the database.  My solution was to just have rails load first 5 or so on page load and then via ajax have js get the rest of the articles and place them in an array.  Cut off the first 5 that rails already displayed and then just pop X amount off the array every time the user scrolls to the bottom of the screen.  This should work in theory but still has the issue of if the database is huge I am asking to load everything every time someone is on the index page of the blog.  This probably cannot work in scale.
+Update: Just learned about offset sql statement, and implemented non ajax pagination
 
 
 I was using a link with "remote: true" set to delete comments via
