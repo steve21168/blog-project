@@ -10,7 +10,7 @@ class Registrations::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    unless @user.errors.any?
+    unless @user.errors.any? || params[:user][:image].nil? 
       thumbnail = Thumbnail.new(image: params[:user][:image], user: @user)
       thumbnail.save
     end
