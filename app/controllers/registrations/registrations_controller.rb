@@ -25,7 +25,6 @@ class Registrations::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     super
-    binding.pry
     unless @user.errors.any?
       @user.thumbnail.destroy if @user.thumbnail
       thumbnail = Thumbnail.new(image: params[:user][:image], user: @user)

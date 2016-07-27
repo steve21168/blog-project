@@ -42,7 +42,7 @@ Overall the process was pretty smooth. These were really the only bugs and chall
 Work in Progress:
 
 Additional work and features needed:
-* Adding user avatar/image
+* Adding user avatar/image - completed (paperclip gem for file upload, aws for storage)
 * Ability to edit post on same page via ajax
 * Ability to format text when making posts ex. bold things
 * Action Mailer and password resets for devise
