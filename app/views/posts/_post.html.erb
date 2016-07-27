@@ -2,8 +2,8 @@
     <div class="post">
       <h3><%= link_to post.title, user_post_path(post.user, post.id) %></h3>
       <p> <%= post.snippet %> </p>
-      <% if (post.user.thumbnail) %>
-        <%= image_tag(post.user.thumbnail.image.url(:thumb), class: "thumbnail") %>
+      <% if (post.thumbnail) && image %>
+        <%= image_tag(post.thumbnail.image.url(:thumb), class: "thumbnail") %>
       <% end %>
       <% if author %>
         <div class="author">
