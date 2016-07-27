@@ -38,6 +38,12 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <%= f.label :image, "Photo" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Update", class: "btn btn-primary" %>
   </div>
