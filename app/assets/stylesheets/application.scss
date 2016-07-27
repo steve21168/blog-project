@@ -88,6 +88,7 @@ h1 {
 
 .post {
   padding: 40px 0px;
+  position: relative;
 }
 
 .author {
@@ -128,6 +129,14 @@ textarea#post_content {
 
 .divider {
   padding: 0px 5px;
+}
+
+.thumbnail {
+  border-radius: 50px;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  padding: 5px;
 }
 
 @media (max-width: 768px) {
