@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order(updated_at: :desc).includes(:user)
+    @posts = Post.order(updated_at: :desc).includes(:thumbnail).paginate(page: params[:page], per_page: 5)
     @user_posts = current_user.posts.order(updated_at: :desc) if user_signed_in?
   end
 
