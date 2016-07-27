@@ -139,6 +139,19 @@ textarea#post_content {
   padding: 5px;
 }
 
+.show-page-headline {
+    position: relative;
+}
+
+.post p {
+    width: 80%;
+}
+
+.post form {
+    display: inline;
+    padding-right: 15px;
+}
+
 @media (max-width: 768px) {
   .col-sm-4 {
     height: 80%;

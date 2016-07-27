@@ -6,9 +6,9 @@
 </div>
 
 <div class="public-posts">
-  <%= render partial: "post", collection: @posts, as: :post, locals: { author: true, klass: "all-posts" } %>
+  <%= render partial: "post", collection: @posts, as: :post, locals: { author: true, klass: "all-posts", image: true } %>
 </div>
 
 <% if @user_posts %>
-  <%= render partial: "post", collection: @user_posts, as: :post, locals: { author: false, klass: "my-posts" } %>
+  <%= render partial: "post", collection: @user_posts, as: :post, locals: { author: false, klass: "my-posts", image: true } %>
 <% end %>

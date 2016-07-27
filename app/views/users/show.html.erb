@@ -2,6 +2,9 @@
     <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
   <% end %>
 
-  <h1> <%= current_user.name %> </h1>
+  <div class="show-page-headline">
+    <h1> <%= current_user.name %> </h1>
+    <%= thumbnail %>
+  </div>
 
-  <%= render partial: "posts/post", collection: @posts, as: :post, locals: { author: false, klass: "all-posts" } %>
+  <%= render partial: "posts/post", collection: @posts, as: :post, locals: { author: false, klass: "all-posts", image: false } %>
